@@ -33,28 +33,3 @@ class Donkey:
             ret = ret and (self.name > other.name)
  
         return ret
- 
-    def __le__(self, other):
-        return self.__lt__(other) or self.__eq__(other)
- 
-    def __eq__(self, other):
-        return (
-            self.load_int == other.load_int
-            and self.years_int == other.years_int
-            and self.name == other.name
-        )
- 
-    def __ne__(self, other):
-        return not self.__eq__(other)
- 
-    def __gt__(self, other):
-        ret = self.years_int < other.years_int
-        if self.load_int != other.load_int:
-            ret = ret and (self.load_int > other.load_int)
-        if self.name != other.name:
-            ret = ret and (self.name < other.name)
- 
-        return ret
- 
-    def __ge__(self, other):
-        return self.__gt__(other) or self.__eq__(other)
