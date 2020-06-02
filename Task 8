@@ -21,15 +21,9 @@ class Donkey:
             self.years_int -= k
             if self.years_int < 0:
                 self.years_int = 0
- 
+
     def carry(self, load):
         return self.load_int <= load
  
     def __lt__(self, other):
-        ret = self.years_int > other.years_int
-        if self.load_int != other.load_int:
-             ret = ret and (self.load_int < other.load_int)
-        if self.name != other.name:
-            ret = ret and (self.name > other.name)
- 
-        return ret
+        ret = self.years_int > other.years_i
